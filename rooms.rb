@@ -25,7 +25,7 @@ attr_reader(:room_name, :guests_checked_in, :songs_list,:room_cost)
 
 
   def remove_guest_money(guest)
-
+   return guest.guest_money -= @room_cost
   end
 
 end
