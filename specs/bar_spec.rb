@@ -7,12 +7,14 @@ require_relative("../guests.rb")
 class BarTest < MiniTest::Test
 
   def setup
-    @bar = Bar.new(
+    @bar = Bar.new([
       {
       :drink_name => "Vodka Shot",
       :drink_price => 3.00
-      },
+      }],
       500)
+
+    @drink = Drink.new("Pint", 2.20)
   end
 
   def test_drinks_available
@@ -21,6 +23,10 @@ class BarTest < MiniTest::Test
 
   def test_till_ammount
     assert_equal(500, @bar.till_ammount())
+  end
+
+  def test_add_drink
+    @bar
   end
 
 end
