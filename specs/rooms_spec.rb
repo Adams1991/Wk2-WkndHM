@@ -9,7 +9,7 @@ class RoomTest < MiniTest::Test
 
     @song = Song.new("Prizefighter")
 
-    @guest = Guest.new("Bob")
+    @guest = Guest.new("Bob", 40)
 
     @room = Room.new("Boogy Room",[],[])
 
