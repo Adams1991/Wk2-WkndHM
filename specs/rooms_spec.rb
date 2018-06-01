@@ -19,4 +19,10 @@ class RoomTest < MiniTest::Test
     assert_equal("Boogy Room", @room.room_name())
   end
 
+  def test_add_guest
+    add_guest(@guest)
+    assert_equal(["Bob"], @room.add_guest)
+  end
+
+
 end
