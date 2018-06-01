@@ -7,8 +7,8 @@ class GuestsTest < MiniTest::Test
     @guest = Guests.new("Bob")
   end
 
-  # def test_song_name
-  #   assert_equal("Prizefighter", @song.song_name())
-  # end
+  def test_guest_name
+    assert_equal("Bob", @guest.guest_name())
+  end
 
 end
