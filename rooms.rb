@@ -28,4 +28,10 @@ attr_reader(:room_name, :guests_checked_in, :songs_list,:room_cost)
    return guest.guest_money -= @room_cost
   end
 
+  def fav_song_in_room(guest_song)
+    return "Woooo" if @songs_list.include?(guest_song)
+  end
+
+
+
 end
