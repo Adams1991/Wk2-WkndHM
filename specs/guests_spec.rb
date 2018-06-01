@@ -19,5 +19,8 @@ class GuestTest < MiniTest::Test
     assert_equal("One Last Time", @guest.fav_song())
   end
 
+  def test_pay_money
+    assert_equal(45, @guest.pay_money())
+  end
 
 end
