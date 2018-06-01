@@ -20,8 +20,7 @@ class RoomTest < MiniTest::Test
   end
 
   def test_add_guest
-    add_guest(@guest)
-    assert_equal(["Bob"], @room.add_guest)
+    assert_equal(["Bob"], @room.add_guest(@guest))
   end
 
 
