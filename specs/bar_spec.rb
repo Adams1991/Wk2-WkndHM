@@ -16,11 +16,11 @@ class BarTest < MiniTest::Test
   end
 
   def test_drinks_available
-    assert_equal({:drink_name => "Vodka", :drink_price=> 3.00}, @bar.drinks_available())
+    assert_equal({:drink_name => "Vodka Shot", :drink_price=> 3.00}, @bar.drinks_available())
   end
 
   def test_till_ammount
-    assert_equal(500, @bar.test_till_ammount())
+    assert_equal(500, @bar.till_ammount())
   end
 
 end
