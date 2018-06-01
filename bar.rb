@@ -8,5 +8,8 @@ attr_reader(:drinks_available, :till_ammount)
     @till_ammount = till_ammount
   end
 
+  def add_drink(drink_to_be_added_bar)
+    @drinks_available << drink_to_be_added_bar
+  end
 
 end
