@@ -1,4 +1,4 @@
-class Songs
+class Song
 
 attr_reader(:song_name)
 

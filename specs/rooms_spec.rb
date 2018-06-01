@@ -3,16 +3,20 @@ require_relative("../rooms.rb")
 require_relative("../songs.rb")
 require_relative("../guests.rb")
 
-class RoomsTest < MiniTest::Test
+class RoomTest < MiniTest::Test
 
-  def setups
+  def setup
 
-    @song = New.Songs("Prizefighter")
+    @song = Song.new("Prizefighter")
 
-    @guest = New.Guests("Bob")
+    @guest = Guest.new("Bob")
 
-    @room = New.Rooms("Boogy Room", [], [])
+    @room = Room.new("Boogy Room", [], [])
 
+  end
+
+  def test_room_name
+    assert_equal("Boogy Room", @room.room_name())
   end
 
 end

@@ -1,10 +1,10 @@
 require("minitest/autorun")
 require_relative("../songs.rb")
 
-class SongsTest < MiniTest::Test
+class SongTest < MiniTest::Test
 
   def setup
-    @song = Songs.new("Prizefighter")
+    @song = Song.new("Prizefighter")
   end
 
   def test_song_name
