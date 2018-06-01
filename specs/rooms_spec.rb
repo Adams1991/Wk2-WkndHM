@@ -40,4 +40,9 @@ class RoomTest < MiniTest::Test
     assert_equal(5, @room2.guests_checked_in().count())
   end
 
+  def test_remove_money_for_room
+    @guest.remove_guest_money(@guest)
+    assert_equal(0, @guest.guests_money())
+  end
+
 end
