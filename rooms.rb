@@ -8,5 +8,9 @@ attr_reader :room_name
     @songs_list = songs_list
   end
 
+  def add_guest(guest_name)
+    return @guests_checked_in.push(guest_name)
+  end
+
 
 end
