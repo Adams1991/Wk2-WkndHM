@@ -23,5 +23,9 @@ class RoomTest < MiniTest::Test
     assert_equal(["Bob"], @room.add_guest(@guest.guest_name))
   end
 
+  def test_add_song
+    assert_equal(["Prizefighter"], @room.add_song(@guest.song_name))
+  end
+
 
 end
