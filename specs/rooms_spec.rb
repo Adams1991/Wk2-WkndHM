@@ -11,9 +11,9 @@ class RoomTest < MiniTest::Test
 
     @guest = Guest.new("Bob", 40)
 
-    @room = Room.new("Boogy Room",[],[])
+    @room = Room.new("Boogy Room",[],[],10)
 
-    @room2 = Room.new("Boogy Room",["Billy", "Dave", "Jim", "Lisa", "Jean"],[])
+    @room2 = Room.new("Boogy Room",["Billy", "Dave", "Jim", "Lisa", "Jean"],[],10)
 
   end
 
@@ -40,9 +40,13 @@ class RoomTest < MiniTest::Test
     assert_equal(5, @room2.guests_checked_in().count())
   end
 
-  def test_remove_money_for_room
-    @guest.remove_guest_money(@guest)
-    assert_equal(0, @guest.guests_money())
+  def test_room_cost
+    assert_equal(10 ,@room.room_cost())
   end
+
+  # def test_remove_money_for_room
+  #   @guest.remove_guest_money(@guest)
+  #   assert_equal(0, @guest.guests_money())
+  # end
 
 end
