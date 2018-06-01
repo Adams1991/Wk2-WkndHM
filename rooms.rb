@@ -22,9 +22,10 @@ attr_reader(:room_name, :guests_checked_in, :songs_list,:room_cost)
   def add_song(song_name)
     return @songs_list.push(song_name)
   end
-  #
-  # def remove_guest_money(guest)
-  #
-  # end
+
+
+  def remove_guest_money(guest)
+
+  end
 
 end
