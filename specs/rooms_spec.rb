@@ -11,6 +11,8 @@ class RoomTest < MiniTest::Test
 
     @guest = Guest.new("Bob", 40, "Prizefighter")
 
+    @guest2 = Guest.new("Leila", 5, "Happy")
+
     @room = Room.new("Boogy Room", [], [], 10)
 
     @room2 = Room.new("Boogy Room", ["Billy", "Dave", "Jim", "Lisa", "Jean"], ["Prizefighter"], 10)
@@ -44,9 +46,15 @@ class RoomTest < MiniTest::Test
     assert_equal(10 ,@room.room_cost())
   end
 
-  def test_remove_money_for_room
+
+  def test_remove_money_for_room__can_afford
     @room.remove_guest_money(@guest)
     assert_equal(30, @guest.guest_money())
+  end
+
+  def test_remove_money_for_room__cannot_afford
+    @room.remove_guest_money(@guest2)
+    assert_equal(5, @guest2.guest_money())
   end
 
   def test_fav_song_in_room
