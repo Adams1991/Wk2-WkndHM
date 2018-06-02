@@ -16,7 +16,6 @@ attr_reader(:drinks_available, :till_ammount)
   def remove_drink_serving(drink_bought)
 
   drink_changed = @drinks_available.find {|drink| drink[:drink_name] == drink_bought}
-
   drink_changed[:amount_of_servings] -= 1
 
   return @drinks_available
