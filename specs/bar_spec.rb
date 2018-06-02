@@ -7,11 +7,13 @@ require_relative("../guests.rb")
 class BarTest < MiniTest::Test
 
   def setup
-    @bar = Bar.new([
+      @bar = Bar.new([
       {
       :drink_name => "Vodka Shot",
       :drink_price => 3.00, :amount_of_servings => 30}],
       500)
+
+      @guest = Guest.new("Bob", 45, "One Last Time")
 
 
       @drink = Drink.new({:drink_name => "Buckfast Shot", :drinks_price=> 1.50, :amount_of_servings => 30})
@@ -35,12 +37,12 @@ class BarTest < MiniTest::Test
   end
 
   def test_remove_drink_serving__drink_alteration
-    assert_equal([
-      {
-      :drink_name => "Vodka Shot",
-      :drink_price => 3.00,
-      :amount_of_servings => 29}
-      ], @bar.remove_drink_serving("Vodka Shot"))
+  assert_equal([
+    {
+    :drink_name => "Vodka Shot",
+    :drink_price => 3.00,
+    :amount_of_servings => 29}
+    ], @bar.remove_drink_serving("Vodka Shot"))
   end
 
   def test_happy_hour
@@ -51,5 +53,8 @@ class BarTest < MiniTest::Test
       :amount_of_servings => 30}], @bar.happy_hour())
   end
 
+  def test_remove_guest_money_for_drink
+    assert_equal(42, @bar.remove_guest_money_for_drink(@guest, "Vodka Shot"))
+  end
 
 end

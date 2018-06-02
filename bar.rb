@@ -25,8 +25,12 @@ attr_reader(:drinks_available, :till_ammount)
 
   def happy_hour
     @drinks_available.each {|drink| drink[:drink_price] = 0}
-
   end
 
+  def remove_guest_money_for_drink(guest, drink_bought)
+    drink = @drinks_available.find {|drink| drink[:drink_name] == drink_bought}
+    return if guest.guest_money <= drink[:drink_price]
+    return guest.guest_money -= drink[:drink_price]
+  end
 
 end
