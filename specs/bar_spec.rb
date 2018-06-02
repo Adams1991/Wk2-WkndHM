@@ -9,11 +9,14 @@ class BarTest < MiniTest::Test
   def setup
     @bar = Bar.new([
       {
-      :drink_name=> "Vodka Shot",
+      :drink_name => "Vodka Shot",
       :drink_price => 3.00, :amount_of_servings => 30}],
       500)
 
+
       @drink = Drink.new({:drink_name => "Buckfast Shot", :drinks_price=> 1.50, :amount_of_servings => 30})
+
+
   end
 
   def test_drinks_available
@@ -24,20 +27,21 @@ class BarTest < MiniTest::Test
     assert_equal(500, @bar.till_ammount())
   end
 
-  def test_add_drink
+  def test_add_drink_details
     assert_equal([{
       :drink_name=> "Vodka Shot",
       :drink_price => 3.00,:amount_of_servings => 30},
-      {:drink_name => "Buckfast Shot", :drinks_price=> 1.50,:amount_of_servings => 30}], @bar.add_drink(@drink.drink_details))
+      {:drink_name => "Buckfast Shot", :drinks_price=> 1.50,:amount_of_servings => 30}], @bar.add_drink_details(@drink.drink_details))
   end
-  #
-  # def test_remove_drink
-  #   @bar.add_drink(@drink.drink_details)
-  #   assert_equal([{
-  #     :drink_name=> "Vodka Shot",
-  #     :drink_price => 3.00
-  #     }], @bar.remove_drink(@drink.drink_details))
-  # end
+
+  def test_remove_drink_serving
+    assert_equal([
+      {
+      :drink_name => "Vodka Shot",
+      :drink_price => 3.00,
+      :amount_of_servings => 29}
+      ], @bar.remove_drink_serving("Vodka Shot"))
+  end
 
 
 end

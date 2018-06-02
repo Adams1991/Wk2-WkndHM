@@ -8,14 +8,21 @@ attr_reader(:drinks_available, :till_ammount)
     @till_ammount = till_ammount
   end
 
-  def add_drink(drink_to_be_added_bar)
+  def add_drink_details(drink_to_be_added_bar)
     @drinks_available.push(drink_to_be_added_bar)
   end
 
-  # def remove_drink(drink_to_remove_bar)
-  #   return if @drinks_available.index() = nil
-  #   drink_index = @drinks_available.index(drink_to_remove_bar)
-  #   @drinks_available.delete_at(drink_index)
-  # end
+
+  def remove_drink_serving(drink_bought)
+
+  drink_changed = @drinks_available.find {|drink| drink[:drink_name] == drink_bought}
+
+  drink_changed[:amount_of_servings] -= 1
+
+  return @drinks_available
+
+  end
+
+
 
 end
