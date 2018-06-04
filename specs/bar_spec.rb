@@ -11,7 +11,7 @@ class BarTest < MiniTest::Test
       {
       :drink_name => "Vodka Shot",
       :drink_price => 3.00, :amount_of_servings => 30}],
-      500)
+      500.00)
 
       @guest = Guest.new("Bob", 45, "One Last Time")
 
@@ -26,7 +26,7 @@ class BarTest < MiniTest::Test
   end
 
   def test_till_ammount
-    assert_equal(500, @bar.till_ammount())
+    assert_equal(500.00, @bar.till_ammount())
   end
 
   def test_add_drink_details
@@ -57,8 +57,9 @@ class BarTest < MiniTest::Test
     assert_equal(42, @bar.remove_guest_money_for_drink(@guest, "Vodka Shot"))
   end
 
-  # def test_add_money_to_till
-  #   assert_equal(503, @bar())
-  # end
+  def test_add_money_to_till
+    @bar.add_money_to_till("Vodka Shot", @bar)
+    assert_equal(503.00, @bar.till_ammount())
+  end
 
 end

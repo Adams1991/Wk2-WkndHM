@@ -32,7 +32,7 @@ attr_accessor(:room_till,:room_cost)
   end
 
   def add_guest_money_till(room)
-    room.room_till() + @room_cost
+    return room.room_till += @room_cost
   end
 
   def fav_song_in_room(guest_song)

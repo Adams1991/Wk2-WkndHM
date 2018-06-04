@@ -1,6 +1,7 @@
 class Bar
 
-attr_reader(:drinks_available, :till_ammount)
+attr_reader(:drinks_available)
+attr_accessor(:till_ammount)
 
 
   def initialize(drinks_available, till_ammount)
@@ -32,5 +33,11 @@ attr_reader(:drinks_available, :till_ammount)
     return if guest.guest_money <= drink[:drink_price]
     return guest.guest_money -= drink[:drink_price]
   end
+
+  def add_money_to_till(drink_bought, bar)
+    drink = @drinks_available.find {|drink| drink[:drink_name] == drink_bought}
+    bar.till_ammount += drink[:drink_price]
+  end
+
 
 end
