@@ -13,9 +13,9 @@ class RoomTest < MiniTest::Test
 
     @guest2 = Guest.new("Leila", 5, "Happy")
 
-    @room = Room.new("Boogy Room", [], [], 10)
+    @room = Room.new("Boogy Room", [], [], 10, 0)
 
-    @room2 = Room.new("Boogy Room", ["Billy", "Dave", "Jim", "Lisa", "Jean"], ["Prizefighter"], 10)
+    @room2 = Room.new("Boogy Room", ["Billy", "Dave", "Jim", "Lisa", "Jean"], ["Prizefighter"], 10, 0)
 
   end
 
@@ -57,9 +57,9 @@ class RoomTest < MiniTest::Test
     assert_equal(5, @guest2.guest_money())
   end
 
-  # def test_till_ammount
-  #
-  # end
+  def test_till_ammount
+    assert_equal(0, @room.room_till())
+  end
 
   def test_fav_song_in_room
     assert_equal("Woooo", @room2.fav_song_in_room(@guest.fav_song))

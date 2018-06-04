@@ -1,12 +1,13 @@
 class Room
 
-attr_reader(:room_name, :guests_checked_in, :songs_list,:room_cost)
+attr_reader(:room_name, :guests_checked_in, :songs_list,:room_cost, :room_till)
 
-  def initialize(room_name, guests_checked_in, songs_list, room_cost)
+  def initialize(room_name, guests_checked_in, songs_list, room_cost, room_till)
     @room_name = room_name
     @guests_checked_in = guests_checked_in
     @songs_list = songs_list
     @room_cost = room_cost
+    @room_till = room_till
   end
 
   def add_guest(guest_name)

@@ -57,4 +57,8 @@ class BarTest < MiniTest::Test
     assert_equal(42, @bar.remove_guest_money_for_drink(@guest, "Vodka Shot"))
   end
 
+  # def test_add_money_to_till
+  #   assert_equal(503, @bar())
+  # end
+
 end
