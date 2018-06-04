@@ -1,6 +1,7 @@
 class Room
 
-attr_reader(:room_name, :guests_checked_in, :songs_list,:room_cost, :room_till)
+attr_reader(:room_name, :guests_checked_in, :songs_list)
+attr_accessor(:room_till,:room_cost)
 
   def initialize(room_name, guests_checked_in, songs_list, room_cost, room_till)
     @room_name = room_name
@@ -28,6 +29,10 @@ attr_reader(:room_name, :guests_checked_in, :songs_list,:room_cost, :room_till)
   def remove_guest_money(guest)
     return if guest.guest_money <= @room_cost
     return guest.guest_money -= @room_cost
+  end
+
+  def add_guest_money_till(room)
+    room.room_till() + @room_cost
   end
 
   def fav_song_in_room(guest_song)
