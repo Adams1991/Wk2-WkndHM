@@ -18,6 +18,8 @@ class BarTest < MiniTest::Test
 
       @drink = Drink.new({:drink_name => "Buckfast Shot", :drinks_price=> 1.50, :amount_of_servings => 30})
 
+      @room = Room.new("Boogy Room", [], [], 10, 50.00)
+
 
   end
 
@@ -60,6 +62,11 @@ class BarTest < MiniTest::Test
   def test_add_money_to_till
     @bar.add_money_to_till("Vodka Shot", @bar)
     assert_equal(503.00, @bar.till_ammount())
+  end
+
+  def test_add_room_till_to_bar_till
+    @bar.add_room_till_to_bar_till(@room)
+    assert_equal(550.00, @bar.till_ammount())
   end
 
 end

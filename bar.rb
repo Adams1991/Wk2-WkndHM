@@ -36,7 +36,11 @@ attr_accessor(:till_ammount)
 
   def add_money_to_till(drink_bought, bar)
     drink = @drinks_available.find {|drink| drink[:drink_name] == drink_bought}
-    bar.till_ammount += drink[:drink_price]
+    return bar.till_ammount += drink[:drink_price]
+  end
+
+  def add_room_till_to_bar_till(room)
+    return @till_ammount += room.room_till()
   end
 
 
